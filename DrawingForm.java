@@ -219,10 +219,11 @@ public class DrawingForm extends javax.swing.JFrame {
         Graphics g = this.getGraphics();
          
         clear();
-         
+        
         for(int i = 0; i < rect.length; i++)
         {
-            rect[i].moveTo(dis * (i + 1), 250);
+            rect[i].moveTo(100 + dis * i, 200);
+            //rect[i].points[0] + rect[i+1].width + dis;
             rect[i].draw(g);
              
         }
@@ -255,7 +256,7 @@ public class DrawingForm extends javax.swing.JFrame {
                 for(int j = i + 1; j < rect.length; j++)
                 {
                 
-                    if(rect[j].compareWidth(rect[minIndex]) > 0)
+                    if(rect[j].compareWidth(rect[minIndex]) < 0)
                     {
                         minIndex = j;
                     }
@@ -269,7 +270,7 @@ public class DrawingForm extends javax.swing.JFrame {
         }
         
         
-        else if(radioSortWidth.isSelected())
+        else if(radioSortHeight.isSelected())
         {
             for(int i = 0; i < rect.length - 1; i++)
             {
@@ -278,7 +279,7 @@ public class DrawingForm extends javax.swing.JFrame {
                 for(int j = i + 1; j < rect.length; j++)
                 {
                 
-                    if(rect[j].compareHeight(rect[minIndex]) > 0)
+                    if(rect[j].compareHeight(rect[minIndex]) < 0)
                     {
                         minIndex = j;
                     }
@@ -299,7 +300,7 @@ public class DrawingForm extends javax.swing.JFrame {
                 for(int j = i + 1; j < rect.length; j++)
                 {
                 
-                    if(rect[j].compareTo(rect[minIndex]) > 0)
+                    if(rect[j].compareTo(rect[minIndex]) < 0)
                     {
                         minIndex = j;
                     }
